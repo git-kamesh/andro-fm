@@ -10,6 +10,7 @@ export interface Album {
   artist: string;
   url: string;
   image: AlbumImage[];
+  mbid: string;
 }
 
 export interface SearchResponse {
