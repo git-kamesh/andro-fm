@@ -42,11 +42,7 @@ function App() {
         <div className='grid grid-cols-2 md:grid-cols-3 gap-4 auto-rows-max mt-5 pb-12 overflow-auto'>
 
           {/* State: rendering albums */}
-          {!isLoading && data?.albums.map((album) =>
-            <AlbumCard
-              key={album.mbid} coverImage={album.image[2]['#text']}
-              albumName={album.name} albumUrl={album.url} artistName={album.artist} />
-          )}
+          {!isLoading && data?.albums.map((album) => <AlbumCard key={album.mbid} album={album} /> )}
 
           {/* State: loading albums, data fetching */}
           {isLoading && Array.from({ length: 5 }).map((_, index) =>
