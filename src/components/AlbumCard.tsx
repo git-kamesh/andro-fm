@@ -16,7 +16,7 @@ export const AlbumCard: React.FC<AlbumCardProps> = ({ coverImage, albumName, alb
       )}
       href={albumUrl} target='_blank'
     >
-      <img src={coverImage} className='w-full' />
+      <img src={coverImage} className='w-full' width={300} height={300}/>
       <div className='text-base text-blue-600 font-semibold mt-2'>{albumName}</div>
       <div className='text-sm text-slate-600 font-medium'>{artistName}</div>
     </a>
