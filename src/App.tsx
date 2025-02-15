@@ -20,6 +20,7 @@ function App() {
   const debouncedUpdateQuery = debounce(updateQuery, 500);
 
   const hasNoQuery = !query.trim();
+  const hasNoResult = !hasNoQuery && !isLoading && !error && !data?.albums.length;
 
   return (
     <div className='h-screen w-screen flex justify-center'>
@@ -33,7 +34,12 @@ function App() {
         {error && <EmptyState imageUrl='/server-down.svg'
           description='Something went wrong, please try again!' descriptionClassName='!text-red-500' /> }
 
-        {!hasNoQuery && !error && <div className='grid grid-cols-2 md:grid-cols-3 gap-4 auto-rows-max mt-5 pb-12 overflow-auto'>
+        {/* State: search result is empty */}
+        {hasNoResult && <EmptyState imageUrl='/no-data.svg'
+          description='No albums found! Try searching with different keywords' />}
+
+        {!hasNoQuery && !error && !hasNoResult && 
+        <div className='grid grid-cols-2 md:grid-cols-3 gap-4 auto-rows-max mt-5 pb-12 overflow-auto'>
 
           {/* State: rendering albums */}
           {!isLoading && data?.albums.map((album) =>
