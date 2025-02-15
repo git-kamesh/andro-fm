@@ -29,7 +29,11 @@ function App() {
         {/* State: has no query */}
         {hasNoQuery && <EmptyState imageUrl='/search.svg' description='Search for your favorite albums' />}
 
-        {!hasNoQuery && <div className='grid grid-cols-2 md:grid-cols-3 gap-4 auto-rows-max mt-5 pb-12 overflow-auto'>
+        {/* State: error in fetching data */}
+        {error && <EmptyState imageUrl='/server-down.svg'
+          description='Something went wrong, please try again!' descriptionClassName='!text-red-500' /> }
+
+        {!hasNoQuery && !error && <div className='grid grid-cols-2 md:grid-cols-3 gap-4 auto-rows-max mt-5 pb-12 overflow-auto'>
 
           {/* State: rendering albums */}
           {!isLoading && data?.albums.map((album) =>
