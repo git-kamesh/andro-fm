@@ -10,6 +10,17 @@ export interface Album {
   artist: string;
   url: string;
   image: AlbumImage[];
-  streamable: string;
-  mbid: string;
 }
+
+export interface SearchResponse {
+  results: {
+    albummatches: {
+      album: Album[];
+    };
+  };
+}
+
+export interface SearchAlbumsResponse {
+  albums: Album[];
+}
+
