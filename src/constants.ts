@@ -5,3 +5,5 @@ export const SEARCH_DEFAULT_LIMIT = 30;
 export const DEFAULT_API_HEADERS = {
   'content-type': 'application/json',
 };
+
+export const LOADING_PLACEHOLDER_COUNT = 5;
