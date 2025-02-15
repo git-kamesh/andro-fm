@@ -1,4 +1,4 @@
-export const AlbumsLoading = () => {
+export const AlbumLoading = () => {
   return (
     <div className='animate-pulse flex flex-col gap-2'>
       <div className="h-[180px] bg-gray-300 rounded-sm"></div>

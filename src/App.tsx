@@ -6,7 +6,7 @@ import { useQuery } from '@tanstack/react-query';
 import { SearchAlbumsResponse } from './types/album.type';
 import { searchAlbums } from './services/albums.service';
 import debounce from 'lodash/debounce';
-import { AlbumsLoading } from './components/AlbumLoading';
+import { AlbumLoading } from './components/AlbumLoading';
 import { EmptyState } from './components/EmptyState';
 import { LOADING_PLACEHOLDER_COUNT } from './constants';
 
@@ -69,7 +69,7 @@ function App() {
 
             {/* State: loading albums, data fetching */}
             {isLoading && Array.from({ length: LOADING_PLACEHOLDER_COUNT }).map((_, index) =>
-              <AlbumsLoading key={index} />
+              <AlbumLoading key={index} />
             )}
           </div>}
       </div>
